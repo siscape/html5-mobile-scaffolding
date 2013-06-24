@@ -1,27 +1,69 @@
 <% import org.codehaus.groovy.grails.commons.GrailsDomainClass %>
 <% classNameLowerCase = className.toLowerCase() %>
+<% projectNameLowerCase = project.toLowerCase() %>
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.example"
-        versionCode="10"
-        version   = "1.0.0">
+            xmlns:gap = "http://phonegap.com/ns/1.0"
+            id        = "com.siscape.${projectNameLowerCase}"
+            versionCode="10"
+            version   = "2.7.0">
 
-    <!-- versionCode is optional and Android only -->
+        <name>${project}</name>
 
-    <name>${project}</name>
+        <description>
+            An application demonstrating estimator.
+        </description>
 
-    <description>
-    </description>
+        <author href="http://siscape.com" email="siyer1@gmail.com">
+            Sri Iyer
+        </author>
 
-    <author href="https://build.phonegap.com" email="support@phonegap.com">
-    3musket33rs
-    </author>
+        <feature name="http://api.phonegap.com/2.7.0/camera"/>
+        <feature name="http://api.phonegap.com/2.7.0/contacts"/>
+        <feature name="http://api.phonegap.com/2.7.0/file"/>
+        <feature name="http://api.phonegap.com/2.7.0/geolocation"/>
+        <feature name="http://api.phonegap.com/2.7.0/media"/>
+        <feature name="http://api.phonegap.com/2.7.0/network"/>
+        <feature name="http://api.phonegap.com/2.7.0/notification"/>
 
-    <access origin="*" subdomains="true" />
-    <access origin="http://maps.googleapis.com" subdomains="true" />
-    <access origin="http://maps.gstatic.com" subdomains="true" />
-    <access origin="http://maps.google.com" subdomains="true" />
+        <preference name="phonegap-version" value="2.7.0" /> <!-- all: current version of PhoneGap -->
+        <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+        <preference name="SuppressesIncrementalRendering" value="false" />
+        <preference name="UIWebViewBounce" value="false" />
+        <preference name="TopActivityIndicator" value="gray" />
+        <preference name="EnableLocation" value="false" />
+        <preference name="EnableViewportScale" value="false" />
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="ShowSplashScreenSpinner" value="true" />
+        <preference name="FadeSplashScreen" value="true" />
+        <preference name="FadeSplashScreenDuration" value=".25" />
+        <preference name="MediaPlaybackRequiresUserAction" value="false" />
+        <preference name="AllowInlineMediaPlayback" value="false" />
+        <preference name="BackupWebStorage" value="cloud" />
 
+        <content src="index.html" />
 
+        <plugins>
+            <plugin name="Device" value="CDVDevice" />
+            <plugin name="Logger" value="CDVLogger" />
+            <plugin name="Compass" value="CDVLocation" />
+            <plugin name="Accelerometer" value="CDVAccelerometer" />
+            <plugin name="Camera" value="CDVCamera" />
+            <plugin name="NetworkStatus" value="CDVConnection" />
+            <plugin name="Contacts" value="CDVContacts" />
+            <plugin name="Debug Console" value="CDVDebugConsole" />
+            <plugin name="Echo" value="CDVEcho" />
+            <plugin name="File" value="CDVFile" />
+            <plugin name="FileTransfer" value="CDVFileTransfer" />
+            <plugin name="Geolocation" value="CDVLocation" />
+            <plugin name="Notification" value="CDVNotification" />
+            <plugin name="Media" value="CDVSound" />
+            <plugin name="Capture" value="CDVCapture" />
+            <plugin name="SplashScreen" value="CDVSplashScreen" />
+            <plugin name="Battery" value="CDVBattery" />
+            <plugin name="Globalization" value="CDVGlobalization" />
+            <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+        </plugins>
+
+        <access origin="*" />
 </widget>
